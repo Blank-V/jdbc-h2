@@ -4,13 +4,9 @@
     <meta charset="UTF-8" http-equiv="Content-Type" content="text/html">
     <title>Spring Boot 模板渲染</title>
 </head>
-
-<div th:insert="footer :: copy"/>
-<div th:include="footer :: copy"/>
-<div th:replace="footer :: copy"/>
-
-
-
-
+<body>
+    <div th:fragment="copy">
+        &copy; 2011 The Good Thymes Virtual Grocery
+    </div>
 </body>
 </html>
