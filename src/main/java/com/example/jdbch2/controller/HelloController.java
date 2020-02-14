@@ -23,21 +23,17 @@ public class HelloController {
 //    @Resource
 //        private Customer customer;
 
-    @GetMapping("/greeting")
-    @ResponseBody
-    public String greeting(){
+    @RequestMapping(value = "show" , method=RequestMethod.GET)
+    public String show(Model model){
+        model.addAttribute("uid","123456");
+        model.addAttribute("name","Jerry");
         System.out.println("Hello");
-        return "greeting";
 
-//        customer.setFirstName("Job");
-//        customer.setLastName("mia");
-//        return hello +"<br/>"+
-//                "firstName: "+customer.getFirstName()+"<br/>"+
-//                "lastName: "+ customer.getLastName();
+        return "show";
     }
-    @GetMapping("/hi")
-    public String hi(@RequestParam(name="name",required = false,defaultValue = "World")String name, Model model){
-        model.addAttribute("name",name);
-        return "hi";
-    }
+//    @GetMapping("/hi")
+//    public String hi(@RequestParam(name="name",required = false,defaultValue = "World")String name, Model model){
+//        model.addAttribute("name",name);
+//        return "hi";
+//    }
 }
